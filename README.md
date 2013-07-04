@@ -2,6 +2,8 @@ Resource Loader
 ======
 
 ```java
+import ru.olamedia.resourceloader.ResourceLoader;
+// ...
 ResourceLoader.register(); // will replace ClassLoader of the current Thread: Thread.currentThread().setContextClassLoader()
 ResourceLoader loader = ResourceLoader.getInstance();
 // usage examples:
