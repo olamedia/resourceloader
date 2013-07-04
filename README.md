@@ -16,4 +16,6 @@ loader.addJar(String path)
 loader.getResourceAsStream(String name);
 // or
 Thread.currentThread().getContextClassLoader().getResourceAsStream(String name);
+// loading classes
+Class.forName(className, true, ResourceLoader.getInstance());
 ```
