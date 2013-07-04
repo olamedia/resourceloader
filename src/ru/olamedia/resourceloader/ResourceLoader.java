@@ -66,7 +66,6 @@ public class ResourceLoader extends ClassLoader {
 	}
 	public void addPath(String path) {
 		try {
-			System.out.println("ResourceLoader.addPath(" + "file://" + new File(path).getCanonicalPath() + ")");
 			addURL(new URL("file://" + new File(path).getCanonicalPath()));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -104,7 +103,6 @@ public class ResourceLoader extends ClassLoader {
 	}
 
 	private InputStream testGetResourceAsStream(String name) {
-		System.out.println("ResourceLoader.getResourceAsStream(" + name + ")");
 		InputStream in = null;
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 		in = stackTraceElements[stackTraceElements.length - 1].getClass().getResourceAsStream(name);
@@ -118,7 +116,6 @@ public class ResourceLoader extends ClassLoader {
 					return in;
 				}
 			} else {
-				System.err.println("null loader");
 			}
 		}
 		in = ClassLoader.getSystemResourceAsStream(name);
